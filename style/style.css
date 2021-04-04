@@ -1,0 +1,47 @@
+/******* function to Convert Pixels too REM *******/
+/**************** Variables *******/
+/********* media quries ******/
+/*************** RESETS ***********/
+html {
+  font-size: 100%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+*, *::before, *::after {
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/*** to make images easier to work with */
+img, picture {
+  max-width: 100%;
+  display: block;
+}
+
+a, a:hover, a:focus {
+  text-decoration: none;
+}
+
+/****** global *********/
+body {
+  background-color: #f2f2f2;
+  min-height: 100vh;
+  max-width: 100%;
+  font-size: 0.9375rem;
+  font-weight: 400;
+  color: #f2f2f2;
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+}
+/*# sourceMappingURL=style.css.map */

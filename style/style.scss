@@ -1,0 +1,85 @@
+/******* function to Convert Pixels too REM *******/
+@function rem($size) {
+    $remSize: $size / 16;
+    @return #{$remSize}rem;
+}
+
+/**************** Variables *******/
+// colors
+$clr-brightOrange:hsl(31, 77%, 52%);
+$clr-darkCyan: hsl(184, 100%, 22%);
+$clr-darkCyan: hsl(179, 100%, 13%);
+
+
+// Neutrals (background, headings, buttons, paragraghs)
+$clr-white-paragraphs: hsla(0, 0%, 100%, 0.75);
+$clr-gray-bg: hsl(0, 0%, 95%);
+
+
+// fonts
+$font-sz-regular: rem(15);
+
+// font weight
+$font-bold: 700;
+$font-medium: 400;
+
+// Font fammily
+$font-LexendDeca: 'Lexend Deca', sans-serif;
+$font-BigShouldersDispla: 'Big Shoulders Display', cursive;
+
+/********* media quries ******/
+@mixin media-query ($size) {
+  @if $size == desktop {
+      @media screen and (max-width: 1200px) {
+          @content;
+      }
+  }
+  @else if $size == tablet {
+      @media screen and (max-width: 808px) {
+          @content;
+      }
+  } 
+}
+
+/*************** RESETS ***********/
+
+html{
+    font-size: 100%;
+    box-sizing: border-box;
+}
+
+html:focus-within{
+    scroll-behavior: smooth;
+}
+
+*, *::before, *::after{
+    box-sizing: inherit;
+} 
+*{
+    margin: 0;
+    padding: 0;
+}
+
+/*** to make images easier to work with */
+img,picture{
+    max-width: 100%;
+    display: block;
+}
+
+a, a:hover, a:focus{
+    text-decoration: none;
+}
+
+
+/****** global *********/
+body{
+    background-color: $clr-gray-bg;
+    min-height: 100vh;
+    max-width: 100%;
+    font-size: $font-sz-regular;
+    font-weight: $font-medium;
+    color: $clr-gray-bg;
+    display: grid;
+    place-items: center ;
+}
+
