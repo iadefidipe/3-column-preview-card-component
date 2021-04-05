@@ -30,15 +30,16 @@ $font-BigShouldersDispla: 'Big Shoulders Display', cursive;
 /********* media quries ******/
 @mixin media-query ($size) {
   @if $size == desktop {
-      @media screen and (max-width: 1040px) {
+      @media screen and (max-width: 1080px) {
           @content;
       }
   }
   @else if $size == tablet {
-      @media screen and (max-width: 808px) {
+      @media screen and (max-width: 870px) {
           @content;
       }
   } 
+  
 }
 
 /*************** RESETS ***********/
@@ -99,7 +100,15 @@ p{
     max-width: rem(1000);
     // border: red solid 4px;
     display: flex;
-    border-radius:10px;
+    @include media-query(desktop){
+        max-width: rem(850);
+    }
+
+    @include media-query(tablet){
+        max-width: 90%;
+        flex-flow: column;
+    }
+
 
     
 }
@@ -110,6 +119,11 @@ p{
 
     &__1{
         background-color: $clr-brightOrange;
+        border-radius: rem(10) 0 0 rem(10);
+        @include media-query(tablet){
+            border-radius: rem(10) rem(10) 0 0;
+        }
+
     }
 
     &__2{
@@ -117,13 +131,19 @@ p{
     }
     &__3{
         background-color: $clr-veryDarkCyan;
+        border-radius: 0 rem(10)  rem(10)  0;
+        @include media-query(tablet){
+            border-radius: 0 0 rem(10) rem(10) ;
+        }
     }
 
+
     &__button{
-        padding: rem(10);
+        padding: rem(10) rem(30);
         border-radius: rem(30);
         border: none;
         background-color: $clr-gray-bg;
+        font-family: $font-LexendDeca;
 
         &__1{
             color: $clr-brightOrange;
@@ -131,6 +151,7 @@ p{
                 background-color: $clr-brightOrange;
                 color: $clr-gray-bg;
                 border: rem(2) solid $clr-gray-bg;
+                
             }
         }
 
@@ -141,7 +162,7 @@ p{
                 color: $clr-gray-bg;
                 border: rem(2) solid $clr-gray-bg;
             }
-        }
+            
         &__3{
             color: $clr-veryDarkCyan;
             &:hover{
@@ -155,6 +176,10 @@ p{
 
     :not(:last-child){
         margin-bottom: rem(30);
+    }
+
+    @include media-query(tablet){
+        padding: rem(30);
     }
 
 }
