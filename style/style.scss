@@ -8,7 +8,7 @@
 // colors
 $clr-brightOrange:hsl(31, 77%, 52%);
 $clr-darkCyan: hsl(184, 100%, 22%);
-$clr-darkCyan: hsl(179, 100%, 13%);
+$clr-veryDarkCyan: hsl(179, 100%, 13%);
 
 
 // Neutrals (background, headings, buttons, paragraghs)
@@ -30,7 +30,7 @@ $font-BigShouldersDispla: 'Big Shoulders Display', cursive;
 /********* media quries ******/
 @mixin media-query ($size) {
   @if $size == desktop {
-      @media screen and (max-width: 1200px) {
+      @media screen and (max-width: 1040px) {
           @content;
       }
   }
@@ -48,9 +48,9 @@ html{
     box-sizing: border-box;
 }
 
-html:focus-within{
-    scroll-behavior: smooth;
-}
+// html:focus-within{
+//     scroll-behavior: smooth;
+// }
 
 *, *::before, *::after{
     box-sizing: inherit;
@@ -74,8 +74,9 @@ a, a:hover, a:focus{
 /****** global *********/
 body{
     background-color: $clr-gray-bg;
-    min-height: 100vh;
     max-width: 100%;
+    min-height: 100vh;
+    
     font-size: $font-sz-regular;
     font-weight: $font-medium;
     color: $clr-gray-bg;
@@ -83,3 +84,77 @@ body{
     place-items: center ;
 }
 
+h2 {
+    font-family: $font-BigShouldersDispla;
+    font-weight:  $font-bold;
+}
+
+p{
+    font-family: $font-LexendDeca;
+}
+
+/************ Styling **********/
+
+.container{
+    max-width: rem(1000);
+    // border: red solid 4px;
+    display: flex;
+    border-radius:10px;
+
+    
+}
+
+.card{
+    padding: rem(50);
+    
+
+    &__1{
+        background-color: $clr-brightOrange;
+    }
+
+    &__2{
+        background-color: $clr-darkCyan;
+    }
+    &__3{
+        background-color: $clr-veryDarkCyan;
+    }
+
+    &__button{
+        padding: rem(10);
+        border-radius: rem(30);
+        border: none;
+        background-color: $clr-gray-bg;
+
+        &__1{
+            color: $clr-brightOrange;
+            &:hover{
+                background-color: $clr-brightOrange;
+                color: $clr-gray-bg;
+                border: rem(2) solid $clr-gray-bg;
+            }
+        }
+
+        &__2{
+            color: $clr-darkCyan;
+            &:hover{
+                background-color: $clr-darkCyan;
+                color: $clr-gray-bg;
+                border: rem(2) solid $clr-gray-bg;
+            }
+        }
+        &__3{
+            color: $clr-veryDarkCyan;
+            &:hover{
+                background-color: $clr-veryDarkCyan;
+                color: $clr-gray-bg;
+                border: rem(2) solid $clr-gray-bg;
+            }
+        }
+
+    }
+
+    :not(:last-child){
+        margin-bottom: rem(30);
+    }
+
+}
